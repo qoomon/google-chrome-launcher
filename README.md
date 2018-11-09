@@ -1,4 +1,5 @@
 # google-chrome-launcher
+Google Chrome Launcher will launch a Google Chrome Instance with a seperate profile
 
 # Installation
 * Download [latest release](https://github.com/qoomon/google-chrome-launcher/releases)
