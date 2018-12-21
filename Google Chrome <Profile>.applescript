@@ -4,9 +4,11 @@ set profile to do shell script "echo \"" & appName & "\" | sed \"s|Google Chrome
 
 do shell script "
 PROFILE='" & profile & "'
-if [ \"$PROFILE\" = 'Fresh' ]; then
+if [ \"$PROFILE\" = 'Default' ]; then
+	PROFILE_DIR=\"$HOME/Library/Application Support/Google/Chrome\"
+else if [ \"$PROFILE\" = 'Fresh' ]; then
 	PROFILE_DIR=\"$(mktemp -d -t '.com.google.Chrome')\"
-else
+else 
 	PROFILE_DIR=\"$HOME/Library/Application Support/Google/Chrome $PROFILE\"
 fi
 
