@@ -6,7 +6,7 @@ do shell script "
 PROFILE='" & profile & "'
 if [ \"$PROFILE\" = 'Default' ]; then
 	PROFILE_DIR=\"$HOME/Library/Application Support/Google/Chrome\"
-else if [ \"$PROFILE\" = 'Fresh' ]; then
+elif [ \"$PROFILE\" = 'Fresh' ]; then
 	PROFILE_DIR=\"$(mktemp -d -t '.com.google.Chrome')\"
 else 
 	PROFILE_DIR=\"$HOME/Library/Application Support/Google/Chrome $PROFILE\"
