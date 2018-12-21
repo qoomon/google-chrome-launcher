@@ -10,5 +10,6 @@ Google Chrome Launcher will launch a Google Chrome Instance with a seperate prof
 * You can have as many copies of `Google Chrome <Profile>.app` as you like
 
 ## Release
-* Create Apllication with **Script Editor** from applescript
+* Create Apllication with **Script Editor**
+  * Export AppleScript as Application
 * Create Application DMG with [create-dmg](https://github.com/sindresorhus/create-dmg)
