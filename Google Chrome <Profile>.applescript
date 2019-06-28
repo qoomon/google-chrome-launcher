@@ -1,13 +1,11 @@
-set appName to name of (info for (path to me))
-
-set profile to do shell script "echo \"" & appName & "\" | sed \"s|Google Chrome \\(.*\\)\\.app|\\1|\""
+set profile to do shell script "echo '" & (path to me) & "' | sed 's|.*:Google Chrome \\(.*\\)\\.app:$|\\1|'"
 
 do shell script "
 PROFILE='" & profile & "'
-if [ \"$PROFILE\" = 'Default' ]; then
-	PROFILE_DIR=\"$HOME/Library/Application Support/Google/Chrome\"
-elif [ \"$PROFILE\" = 'Fresh' ]; then
+if [ \"$PROFILE\" = 'Fresh' ]; then
 	PROFILE_DIR=\"$(mktemp -d -t '.com.google.Chrome')\"
+elif [ \"$PROFILE\" = 'Default' ]; then
+	PROFILE_DIR=\"$HOME/Library/Application Support/Google/Chrome\"
 else 
 	PROFILE_DIR=\"$HOME/Library/Application Support/Google/Chrome $PROFILE\"
 fi
